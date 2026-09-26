@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gold Car Wash</title>
-   <!-- TAGS CRÍTICAS PARA O WHATSAPP MOSTRAR A FOTO -->
-    <meta property="og:title" content="Seu veículo está pronto!">
+   <meta property="og:title" content="Seu veículo está pronto!">
     <meta property="og:description" content="Confira nosso app venha conferir promoçoes e descontos!!.">
     <meta property="og:image" content="https://raw.githubusercontent.com/pradodalapa-hue/fotos-industrial/main/img/jdp_1790434942988_image_6a630504.jpg">
     <meta property="og:type" content="website">
@@ -14,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- COMPATIBILIDADE DOS MOTORES -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -310,14 +308,12 @@
 </head>
 <body class="pb-28" oncontextmenu="return false;">
 
-    <!-- TELA DE CARREGAMENTO SUPREME -->
     <div id="loading-supreme">
         <div class="resplendor-ouro">GOLD CAR WASH</div>
         <div id="loading-status-text" style="margin-top: 12px; color: #fde047; font-size: 10px; font-weight: 800; letter-spacing: 2px; animation: pulse 1.5s infinite;">CARREGANDO NAVE...</div>
         <div class="spinner-supreme"></div>
     </div>
 
-    <!-- MOTOR DO RECIBO SUPREME -->
     <div id="modal-supreme" class="modal-industrial">
         <div class="flex flex-col items-center gap-4 w-full">
             <div id="print-area" class="recibo-area">
@@ -367,7 +363,6 @@
         </div>
     </div>
 
-    <!-- HEADER -->
     <header class="p-4 flex justify-between items-center sticky top-0 bg-[#020617] z-50 border-b border-slate-900 gap-2">
         <div class="flex items-center gap-2 sm:gap-3 min-w-0">
             <div class="min-w-0">
@@ -377,21 +372,18 @@
         </div>
                                                   
         <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
-            <!-- BOTÃO DO CARRINHO ESTÁVEL -->
             <div onclick="toggleCartScreen()" class="relative bg-slate-900 p-2 sm:p-2.5 rounded-xl border border-slate-800 cursor-pointer flex-shrink-0">
                 🛒 <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-500 text-[8px] sm:text-[9px] w-4 sm:w-4.5 h-4 sm:h-4.5 flex items-center justify-center rounded-full text-black font-black">0</span>
             </div>
         </div>
     </header>
 
-    <!-- TELA DO CARRINHO -->
     <div id="cart-screen" class="hidden fixed inset-0 z-[5000] bg-[#020617] p-5 overflow-y-auto">
         <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
             <h2 class="text-[#fde047] font-black italic tracking-wider">MEU PEDIDO / AGENDAMENTO</h2>
             <button onclick="toggleCartScreen()" class="text-slate-400 font-bold uppercase text-xs">VOLTAR</button>
         </div>
         
-        <!-- DADOS PARA BUSCA DO VEÍCULO -->
         <div class="bg-[#0f172a] p-4 rounded-2xl border border-slate-900 mb-5 space-y-3">
             <p class="text-xs font-black text-cyan-400 uppercase tracking-widest"><i class="fas fa-car-side"></i> Dados para Coleta do Veículo</p>
             <div>
@@ -422,13 +414,11 @@
         </div>
     </div>
 
-    <!-- PRINCIPAL -->
     <main class="px-4">
         <div class="slider-container">
             <div id="sliderTrack" class="slider-track"></div>
         </div>
 
-        <!-- BOTÕES FLUTUANTES DIRECIONAIS -->
         <a id="btn-logo" class="btn-flutuante" target="_blank">
             <img src="https://raw.githubusercontent.com/pradodalapa-hue/fotos-industrial/main/img/jdp_1790350678014_1001569745.jpg" class="rounded-full w-10 h-10 object-cover">
         </a>
@@ -439,7 +429,6 @@
             <img src="https://raw.githubusercontent.com/pradodalapa-hue/fotos-industrial/main/img/jdp_1780281835705______.gif" class="rounded-full w-10 h-10 object-cover">
         </a>
 
-        <!-- CATEGORIAS -->
         <div class="flex gap-7 overflow-x-auto py-8 no-scrollbar">
             <span class="category-item category-active" id="cat-todos" onclick="filterCategory('todos', this)">Todos</span>
             <span class="category-item" id="cat-burguer" onclick="filterCategory('burguer', this)">Lavagens</span>
@@ -447,11 +436,9 @@
             <span class="category-item" id="cat-combo" onclick="filterCategory('combo', this)">Combos</span>
         </div>
 
-        <!-- VITRINE DE PRODUTOS JDP EXATA -->
         <div id="product-grid" class="grid-vendas text-slate-100"></div>
     </main>
 
-    <!-- BOTTOM BAR -->
     <nav class="bottom-nav">
         <div onclick="location.reload()" class="flex flex-col items-center text-cyan-400 cursor-pointer">
             <span class="text-xl">🏠</span>
@@ -467,7 +454,6 @@
         </div>
     </nav>
 
-    <!-- MODAL DE DETALHES -->
     <div id="product-modal" class="hidden fixed inset-0 z-[4000] bg-slate-950/95 backdrop-blur-md p-5 flex flex-col justify-center">
         <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-500 font-bold text-sm tracking-wider">FECHAR X</button>
         <div class="flex flex-col gap-4 max-w-sm mx-auto w-full relative">
@@ -481,7 +467,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE INTELIGÊNCIA UNIFICADO SEM LOGIN -->
     <script>
         const LOJA_ID = "GOLD_CAR_WASH_01";
         const CHIP_DESTINO = "5592984846058";
@@ -506,7 +491,7 @@
         let idPedidoAtual = "";
         let subtotalPedido = 0;
         let totalComDesconto = 0;
-        let linkPagamentoPix = "";
+        let linkPagamentoPix = "https://pradodalapa-hue.github.io/GOLD_CAR_WASH/";
         let categoriaAtiva = "todos";
 
         const bannerData = [
